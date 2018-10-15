@@ -1,0 +1,18 @@
+<div class="loading-indicator" *ngIf="indicator">
+  <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50" [strokeWidth]="8"></mat-progress-spinner>
+</div>
+<ng2-smart-table [settings]="tableSettings" [source]="tableSource"
+                 (createConfirm)="onCreateConfirm($event)"
+                 (editConfirm)="onEditConfirm($event)"
+                 (deleteConfirm)="onDeleteConfirm($event)"
+                 (userRowSelect)="onRowSelect($event)">
+</ng2-smart-table>
+<div>
+  <div class="generate-sid" *ngIf="generatingSIDFlag">
+    <button mat-raised-button (click)="onGenerateSidClick()" >{{'ADMIN.BTN_GENERATE_SID' | translate}}</button>
+  </div>
+  <div [class.back-home-normal]="!generatingSIDFlag"
+       [class.back-home-sid-mapping]="generatingSIDFlag">
+    <button mat-raised-button (click)="onBackHomeClick()">{{'ADMIN.BTN_BACK' | translate}}</button>
+  </div>
+</div>

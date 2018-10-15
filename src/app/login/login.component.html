@@ -1,0 +1,8 @@
+<div class="loading-indicator">
+  <mat-progress-spinner *ngIf="!message" [mode]="'indeterminate'" [diameter]="50" [strokeWidth]="8"></mat-progress-spinner>
+</div>
+<div class="login">{{'ROOT.LOGGING_IN' | translate}}{{progress}}</div>
+
+<div *ngIf="message">
+  <label class="message-error">{{message}}</label>
+</div>

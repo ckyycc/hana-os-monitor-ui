@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar role="heading">
+    <span><img src = "./assets/logo.png" alt="SAP HANA OS Monitor" class="sap-logo"></span>
+    <span class="header-title"><B>{{title | translate}}</B></span>
+    <span class="header-spacer"></span>
+    <!--comment to fix popover doesn't work issue <span class="header-logon"-->
+          <!--[mdePopoverTriggerFor]="appPopover"-->
+          <!--[mdePopoverTriggerOn]="'click'">{{getUserName() || ('ROOT.LOGGING_IN' | translate)}}</span>-->
+    <span class="header-logon" *ngIf="!getUser()">{{'ROOT.LOGGING_IN' | translate}}</span>
+    <span class="header-logon" *ngIf="getUser()"
+          [mdePopoverTriggerFor]="appPopoverUser"
+          [mdePopoverTriggerOn]="'click'">{{getUserName()}}
+      <mde-popover #appPopoverUser="mdePopover" [mdePopoverOverlapTrigger]="false">
+        <mat-card style="max-width: 200px;">
+          <mat-card-content>
+            <b>{{user.employeeName}}</b><br>
+            <span style="font-size:12px">{{user.email}}</span>
+            <hr>
+            <p>{{'ROOT.USER_ID' | translate}}: {{user.employeeId}}</p>
+            <p>{{'ROOT.USER_ADMIN' | translate}}: {{user.isAdmin=='X'? 'Yes' : 'No'}}</p>
+            <p>{{'ROOT.USER_SUPER_ADMIN' | translate}}: {{user.isSuperAdmin=='X'? 'Yes' : 'No'}}</p>
+          </mat-card-content>
+        </mat-card>
+      </mde-popover>
+    </span>
+  <span class="header-lang-selector"
+        [mdePopoverTriggerFor]="appPopoverLang"
+        [mdePopoverTriggerOn]="'click'">{{getLangText(selectedLanguage)}}
+
+    <mde-popover #appPopoverLang="mdePopover" [mdePopoverOverlapTrigger]="false">
+      <mat-card style="max-width: 200px;">
+        <mat-card-content>
+          <b>{{getLangText(selectedLanguage)}}</b><br>
+          <hr>
+          <p *ngFor="let lang of translate.getLangs()"
+             class="lang-selector-item"
+             [id]="'lang-selector-item-' + lang"
+             (click)="changeLanguage($event, lang)">{{ getLangText(lang) }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mde-popover>
+  </span>
+      <!--<span class="language-selector"> {{selectedLanguage}}</span>-->
+      <!--<mat-form-field class="language-selector"> -->
+      <!--<mat-select placeholder="" [(value)]="selectedLanguage" (selectionChange)="changeLanguage()">-->
+        <!--<mat-option *ngFor="let lang of translate.getLangs()" [value]="lang"> {{ getLangText(lang) }}-->
+        <!--</mat-option>-->
+      <!--</mat-select>-->
+    <!--</mat-form-field>-->
+    <!--</span>-->
+</mat-toolbar>
+<mat-divider></mat-divider>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let link of links" [routerLink]="link.name"  [active]="activeLink == link.name">{{link.display | translate}}</a>
+     <!--(click)="activeLink = link.name">{{link.display}}</a>-->
+</nav>
+<router-outlet></router-outlet>
+
+

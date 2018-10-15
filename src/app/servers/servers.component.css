@@ -1,0 +1,164 @@
+/**********below for search ********/
+div.monitor-search {
+  flex: 1 1 auto;
+  text-align: center;
+  margin-top: -45px;
+}
+
+.mat-form-field-search {
+  background-color: #fafafa;/*whitesmoke;*/
+  font-size: 12px;
+  color: #b6b6b6;
+  width: 230px;
+  height: 35px;
+  padding-bottom: -10px;
+  padding-left: 10px;
+  padding-right: 5px;
+  /*border: 1px solid lightskyblue;*/
+}
+/**********below for search ********/
+/**********below for location selector**********/
+.mat-form-field.location-selector  {
+  width:110px;
+}
+.mat-form-field.location-selector:hover  {
+  font-weight: bold;
+}
+/deep/.mat-form-field-underline{
+  display: none;
+}
+div.monitor-selector {
+  /*top: -55px;*/
+  margin-right: 25px;
+  margin-top: -45px;
+  margin-bottom: 40px;
+  height: 20px;
+  font-size: 12px;
+  float: right;
+}
+
+/**********above for location selector**********/
+
+/**********below for servers content**********/
+mat-grid-list { background: white; }
+mat-grid-tile { border: 0px solid lightgrey; }
+mat-grid-tile:hover { border: 1px solid lightskyblue;  cursor: pointer; }
+div.monitor-content {
+  width: 98%;
+  /*border: 1px solid grey;*/
+  margin-left: 10px;
+  margin-top: 20px;
+  /*text-align: center;*/
+}
+label.monitor-card-title {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: darkolivegreen;
+  margin-bottom: 20px;
+}
+label.monitor-card-resource-type {
+  display: inline-block;
+  margin: .3em 0;
+  color: #607D8B;
+  white-space:nowrap;
+  /*font-weight: bold;*/
+}
+label.monitor-card-resource-type:hover { cursor: pointer; }
+/*********below for server info card*********/
+mat-card {
+  width: 155px;
+  height: 145px;
+  /*border: 1px solid lightgrey;*/
+
+  /*margin: 30px;*/
+}
+
+.monitor-section {
+  /*display: block;*/
+  /*align-content: center;*/
+  /*align-items: center;*/
+}
+.monitor-section:hover{
+  /*border: 1px solid mediumvioletred;*/
+  font-weight: bold;
+  font-size: 110%;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: mintcream /*#ceffd4;*/
+}
+
+.accent {
+  background-color: #fbffe3;/*#feffd9;*/
+}
+
+.warn {
+  background-color: #ffe5f1; /*#ffe3db;*/
+  -webkit-animation: warning 1.5s infinite;
+  -moz-animation:    warning 1.5s infinite;
+  animation:         warning 1.5s infinite;
+}
+
+@-webkit-keyframes warning {
+  0%   { background-color: #ffe5f1; }
+  49% { background-color: #ffe5f1; }
+  50% { background-color: #fbffe3; }
+  99% { background-color: #fbffe3; }
+  100% { background-color: #ffe5f1; }
+}
+@-moz-keyframes warning {
+  0%   { background-color: #ffe5f1; }
+  49% { background-color: #ffe5f1; }
+  50% { background-color: #fbffe3; }
+  99% { background-color: #fbffe3; }
+  100% { background-color: #ffe5f1; }
+}
+@keyframes warning {
+  0%   { background-color: #ffe5f1; }
+  49% { background-color: #ffe5f1; }
+  50% { background-color: #fbffe3; }
+  99% { background-color: #fbffe3; }
+  100% { background-color: #ffe5f1; }
+}
+
+.error {
+  background-color: #ffe5f1;
+}
+/*********above for server info card*********/
+/**********above for servers content**********/
+
+/deep/.mat-tooltip.tooltip {
+  background-color: darkolivegreen;
+  font-size: 12px;
+}
+
+
+/*primary*/
+/deep/ .mat-progress-bar-fill::after {
+  background-color: cornflowerblue;
+}
+/*/deep/  .mat-progress-bar-buffer {*/
+  /*background-color: lightblue;*/
+/*}*/
+
+/*accent*/
+/deep/ .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: #fff286;
+}
+/*/deep/ .mat-progress-bar.mat-accent .mat-progress-bar-fill::after {*/
+  /*background-color: yellow;*/
+/*}*/
+
+
+/*warn*/
+/deep/ .mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+  background-color: lightsalmon;
+}
+/*/deep/ .mat-progress-bar.mat-warn .mat-progress-bar-buffer {*/
+  /*background-color: lightcoral;*/
+/*}*/
+/deep/ .warning-snackbar {
+  color: yellow;
+}

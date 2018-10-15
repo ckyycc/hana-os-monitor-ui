@@ -1,0 +1,55 @@
+  <div class="loading-indicator" *ngIf="!servers">
+    <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50" [strokeWidth]="8"></mat-progress-spinner>
+  </div>
+  <div class="monitor-selector">
+    <mat-form-field class="location-selector">
+      <mat-select placeholder="{{'SERVER.LOCATION' | translate}}" [(value)]="selectedLocationId" (selectionChange)="refreshData()">
+        <mat-option *ngIf="locations && locations.length > 1">{{'SERVER.LOCATION_ALL' | translate}}</mat-option>
+        <mat-option *ngFor="let location of locations" [value]="location.locationId">
+          {{ location.location }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="monitor-search">
+    <mat-form-field class="mat-form-field-search">
+      <input matInput type="text" placeholder="{{'SERVER.ENTER_SEARCH_TEXT' | translate}}" [(ngModel)]="filterValue">
+      <button mat-button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="filterValue=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-button *ngIf="!filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="filterValue=''">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="monitor-content">
+    <mat-grid-list [cols]="columnNum" rowHeight="220px" (window:resize)="onResize($event)">
+      <mat-grid-tile *ngFor="let server of getDisplayServers(filterValue)">
+        <mat-card
+          [class.primary]="server.status == SERVER_STATUS.PRIMARY"
+          [class.accent]="server.status == SERVER_STATUS.ACCENT"
+          [class.warn]="server.status == SERVER_STATUS.WARN"
+          [class.error]="server.status == SERVER_STATUS.ERROR"
+          matTooltip={{getTooltip(server)}}
+          [matTooltipShowDelay]="250"
+          [matTooltipPosition]="'above'"
+          [matTooltipClass]="'tooltip'"
+          (click)="checkDetail(server.id, server.name)">
+          <mat-card-content>
+            <label class="monitor-card-title">{{server.name}}</label>
+            <section *ngFor="let resource of server.resources" class="monitor-section">
+              <div (click)="checkDetail(server.id, server.name, resource.type);  $event.stopPropagation()">
+                <label class="monitor-card-resource-type">{{resourceTypeText[resource.type] | translate}}{{getResourceValue(resource)}}</label>
+                <mat-progress-bar
+                  [color]="getColor(resource.status)"
+                  [mode]="mode"
+                  [value]="resource.value"
+                  [bufferValue]="bufferValue">
+                </mat-progress-bar>
+              </div>
+            </section>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>

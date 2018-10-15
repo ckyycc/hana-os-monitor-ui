@@ -1,0 +1,98 @@
+<div class="help-page">
+  <div class="help-title">
+    What you can do with HANA Server Operating System Monitoring Tool
+  </div>
+  <!--You are only allowed to access this HANA Server Operating System Monitoring Tool via SAP computers and within SAP network.-->
+  <div class="help-body">
+    <p class="help-body-normal"><a href="../">HANA Server Operating System Monitoring Tool</a> has been tested on Google Chrome,
+       Microsoft Edge and Mozilla Firefox. For better experience please use Google Chrome. </p>
+    <p class="help-body-normal">You are only allowed to access this tool
+      within SAP network via SAP computers with standard SAP windows image being installed. If the <a href="../servers">home page</a> is empty, please ask your
+      system administrator to add the relative locations' info to your account.</p>
+    <div class="help-body-accordion">
+      <mat-accordion>
+        <mat-expansion-panel class="help-body-expansion-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Signing in
+            </mat-panel-title>
+            <mat-panel-description>
+              You need to login before you can access this tool
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>Normally, login will be done automatically. If you have multiple valid certifications, you might need to
+            select the correct SAP certification manually.</p>
+          <p>When logging in the tool, if you are getting the error message : "User [Your ID] does not exist in
+            the system.", please contact system administrator to add your info into the system; If you are getting
+            the error message: "undefined error", please use SAP standard windows image to access this tool.</p>
+          <p>After logging in the tool successfully, you should see your employee id and your name at the top right corner.
+          </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="help-body-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Servers Status Monitoring
+            </mat-panel-title>
+            <mat-panel-description>
+              Check CPU/Memory/Disk status
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ul>
+            <li>Checking current CPU/Memory/Disk status of all servers at <a href="../servers">Home</a></li>
+            <li>Checking the detail/history resource (CPU/Memory/Disk) consumption information of some server at
+                <a href="../servers">Home</a> by clicking on some server or some resource.
+            </li>
+          </ul>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="help-body-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Administration of Users and Locations
+            </mat-panel-title>
+            <mat-panel-description>
+              CRUD of Users and Locations
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ul>
+          <li>Managing the users and locations at <a href="../admin">Administration</a> by clicking on the first item
+            <img src = "../assets/user-location-admin-header.png" alt="User Location Admin" class="help-body-admin-item-image"></li>
+          <li>Managing the users information at <a href="../admin">Administration</a> by clicking on the second item
+            <img src = "../assets/user-admin-header.png" alt="User Admin" class="help-body-admin-item-image"></li>
+          </ul>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="help-body-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Administration of SID and Mappings
+            </mat-panel-title>
+            <mat-panel-description>
+              CRUD of SID and Mappings
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+            <ul>
+              <li>Managing the SID information, setting important instance flag at <a href="../admin">Administration</a>
+              by clicking the third item <img src = "../assets/sid-admin-header.png" alt="SID Admin" class="help-body-admin-item-image"></li>
+              <li>Managing the SID mapping information at <a href="../admin">Administration</a> by clicking
+              the forth item <img src = "../assets/sid-mapping-admin-header.png" alt="SID Mapping Admin" class="help-body-admin-item-image"></li>
+            </ul>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="help-body-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Administration of configuration
+            </mat-panel-title>
+            <mat-panel-description>
+              Select/Update of Configuration
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>Managing/view the configuration for both backend script and web at <a href="../admin">Administration</a>
+          by clicking the last item <img src = "../assets/config-admin-header.png" alt="Config Admin" class="help-body-admin-item-image"></p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+  <div class="help-dialog-button">
+    <button mat-raised-button style="background-color: #ececec" (click)="onAboutClick()">About HANA OS Monitor Tool</button>
+  </div>
+</div>
+

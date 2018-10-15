@@ -1,0 +1,53 @@
+div.help-page {
+  margin-top: 25px;
+  margin-left: 50px;
+
+}
+div.help-title {
+  height: 80px;
+  line-height: 80px; /*for align vertically center*/
+  font-size: 22px;
+  color: #575757;
+  width: 700px;
+}
+
+div.help-body {
+  /*margin-right: 40px;*/
+  line-height: 20px;
+  /*font-size: 14px;*/
+  color: #575757 ;
+  width: 700px;
+}
+
+div.help-body a:link {
+  text-decoration: none;
+  color: royalblue;
+}
+div.help-body a:visited {
+  color: royalblue;
+}
+div.help-body a:hover{
+  text-decoration: underline
+}
+
+.help-body-admin-item-image {
+  height: 35px;
+  margin-bottom : -5px;
+}
+
+div.help-body-accordion {
+  margin-top: 25px;
+}
+.help-body-expansion-panel{
+  background-color: #f8f8f8;
+}
+p.help-body-normal {
+  font-size: 14px;
+}
+p.help-body-title {
+  font-size: 18px;
+}
+
+div.help-dialog-button {
+  margin-top: 30px;
+}

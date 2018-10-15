@@ -1,0 +1,89 @@
+<div class="loading-indicator" *ngIf="!server && !message">
+  <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50" [strokeWidth]="8"></mat-progress-spinner>
+</div>
+<div class="mat-tab-group">
+<mat-tab-group [selectedIndex]="selectedTab.value"
+               (selectedIndexChange)="selectedTab.setValue($event);" >
+  <mat-tab *ngFor="let tab of tabs_text" [label]="tab | translate" >
+    <div class="mat-table">
+      <table mat-table [dataSource]="getConsumers(selectedTab.value)" >
+        <!-- user-admin name Column -->
+        <ng-container matColumnDef="userName">
+          <th mat-header-cell *matHeaderCellDef> {{ 'SERVER.TABLE_USER_NAME' | translate }} </th>
+          <td mat-cell *matCellDef="let element"> {{ element.userName }} </td>
+          <td mat-footer-cell *matFooterCellDef> {{ 'SERVER.TABLE_TOTAL' | translate }} </td>
+        </ng-container>
+        <!-- sid Column -->
+        <ng-container matColumnDef="sid">
+          <th mat-header-cell *matHeaderCellDef> {{ getHeaderSIDOrFolder(selectedTab.value) | translate }} </th>
+          <td mat-cell *matCellDef="let element"> {{ element.sid || element.folder}} </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+        <!-- Owner Column -->
+        <ng-container matColumnDef="owner">
+          <th mat-header-cell *matHeaderCellDef> {{'SERVER.TABLE_OWNER' | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{ element.owner }} </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+        <!-- Consuming Column -->
+        <ng-container matColumnDef="consuming">
+          <th mat-header-cell *matHeaderCellDef> {{'SERVER.TABLE_CONSUME' | translate}} ({{ getUnit(selectedTab.value) }}) - {{data.serverName}}</th>
+          <td mat-cell *matCellDef="let element"> {{ element.consuming | number }} </td>
+          <td mat-footer-cell *matFooterCellDef>
+            {{ getTotalCost(selectedTab.value) | number }}
+            {{ getUnit(selectedTab.value) }}
+            <label *ngIf="getUnit(selectedTab.value)!='%'">
+              ({{'SERVER.TABLE_SERVER' | translate}} {{'SERVER.TABLE_TOTAL' | translate}}: {{ getServerTotal(selectedTab.value) | number}} {{ getUnit(selectedTab.value) }})
+            </label>
+          </td>
+        </ng-container>
+        <!-- check time Column -->
+        <ng-container matColumnDef="checkTime">
+          <th mat-header-cell *matHeaderCellDef> {{'SERVER.TABLE_CHECK_TIME' | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{ element.checkTime }} </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+      </table>
+    </div>
+
+    <!--Server id: {{data.serverId}} for {{tab}},loaded at {{getTimeLoaded(selectedTab.value) | date:'medium'}}-->
+    <!--<br>-->
+
+    <!--<label *ngFor="let consumer of getConsumers(selectedTab.value)">-->
+      <!--{{consumer.userName}}-->
+      <!--{{consumer.sid}}-->
+      <!--{{consumer.owner}}-->
+      <!--{{consumer.consuming}}-->
+    <!--</label>-->
+  </mat-tab>
+  <mat-tab [label]="'SERVER.TAB_TITLE_HISTORY' | translate" *ngIf="histories">
+    <!--for lazy loading-->
+    <!--<ng-template matTabContent>-->
+    <div class="line-chart">
+      <ngx-charts-line-chart
+        [scheme]="colorScheme"
+        [results]="histories"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [legendTitle] = "legendTitle"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel | translate"
+        [yScaleMax]="yScaleMax"
+        [autoScale]="autoScale">
+      </ngx-charts-line-chart>
+    </div>
+    <!--</ng-template>-->
+  </mat-tab>
+</mat-tab-group>
+  <div *ngIf="message">
+    <label class="message-error">{{message}}</label>
+  </div>
+<button mat-raised-button (click)="onOKClick()">{{'SERVER.BTN_BACK' | translate}}</button>
+</div>

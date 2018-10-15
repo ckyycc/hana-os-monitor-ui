@@ -1,0 +1,130 @@
+div.admin-content {
+  width: 1505px;
+  /*border: 1px solid grey;*/
+  margin-left: 25px;
+  margin-top: 25px;
+  /*text-align: center;*/
+}
+
+.admin-card {
+  width: 220px;
+  height: 360px;
+  border: 2px solid white;
+}
+
+.admin-card:hover {
+  border: 2px solid lightskyblue;  cursor: pointer;
+}
+
+.admin-card-header-image-user-location {
+  background-image: url('../../assets/user-location-admin-header.png');
+  background-size: cover;
+}
+.admin-card-header-image-user {
+  background-image: url('../../assets/user-admin-header.png');
+  background-size: cover;
+}
+.admin-card-header-image-sid {
+  background-image: url('../../assets/sid-admin-header.png');
+  background-size: cover;
+}
+.admin-card-header-image-sid-mapping {
+  background-image: url('../../assets/sid-mapping-admin-header.png');
+  background-size: cover;
+}
+.admin-card-header-image-config {
+  background-image: url('../../assets/config-admin-header.png');
+  background-size: cover;
+}
+
+mat-grid-list {
+  width: 1500px;
+}
+ mat-grid-tile {
+  width: 300px;
+  height: 460px;
+  /*border: 1px solid lightgrey;*/
+}
+/********** below settings are for table in children pages *********/
+/* grid lines */
+:host /deep/ ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid #e9ebec;
+}
+
+:host /deep/ ng2-smart-table table {
+  border-collapse: collapse;
+  width: 100%;
+  /*border-style: inset;*/
+  /*border-color: initial;*/
+  /*border-image: initial;*/
+  /*border-width: 2px;*/
+  /*display: table;*/
+  /*!*border-spacing: 2px;*!*/
+  /*border-color: grey; !* border of the big table*!*/
+}
+
+/* headers grid color*/
+:host /deep/ ng2-smart-table thead > tr > th  {
+  border: 1px solid #e9ebec;
+  background-color: #fafafa ;
+}
+
+/*/deep/ ng2-smart-table tr:nth-child(even) {background-color: #f2f2f2;}*/
+
+/*font size*/
+:host /deep/ ng2-smart-table {
+  font-size:14px;
+}
+
+:host /deep/ ng2-smart-table a{
+  /*display:block;*/
+  /*width:100%;*/
+  /*padding:.75rem;*/
+  margin-left: 3px;
+  margin-right: 3px;
+  /*font-size: */
+}
+
+/deep/ .ng2-smart-actions {
+  /*display: none !important;*/
+  width: 85px;
+}
+/*/deep/ .ng2-smart-action-add-add {*/
+  /*display: none;*/
+/*}*/
+
+button.mat-raised-button {
+  width: 100%;
+}
+button.mat-raised-button:hover {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+div.back-home-normal{
+  width:100%;
+}
+div.back-home-sid-mapping{
+  width:49%;
+  float: right
+}
+div.generate-sid{
+  width:49%;
+  float: left
+}
+
+/********** above settings are for table in children pages *********/
+
+/deep/ .warning-snackbar {
+  color: yellow;
+  font-weight: bold;
+}
+/deep/ .error-snackbar {
+  color: #ff5f5b;
+  font-weight: bold;
+}
+/deep/ .info-snackbar {
+  color: cornflowerblue;
+  font-weight: bold;
+}

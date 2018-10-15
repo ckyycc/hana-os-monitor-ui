@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/*@import '~@angular/material/prebuilt-themes/purple-green.css';*/
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+@import '~material-design-icons-iconfont/dist/material-design-icons.css';
+body {
+  /*font-family: Roboto, Arial, sans-serif;*/
+  font-family: Tahoma, Helvetica, Arial, "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif ;
+  /*font-size: 9pt;*/
+  margin: 0;
+  background-color: white;
+}
+
+/**********below for loading spinner**********/
+/* Absolute Center Spinner */
+div.loading-indicator {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+div.loading-indicator:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+/**********above for loading spinner**********/
+
+/**********blow for message displaying**********/
+label.message-error {
+  font-size: 12px;
+  color: red;
+}
+label.message-warning {
+  font-size: 12px;
+  color: darkorange;
+}
+label.message-info {
+  font-size:12px;
+  color: darkblue;
+}
+
