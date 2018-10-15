@@ -114,7 +114,7 @@ export class ServersComponent implements OnInit, OnDestroy  {
     if (this.refreshSubscription != null) {
       this.refreshSubscription.unsubscribe();
     }
-    this.refreshSubscription = timer(0,6000).subscribe(() => this.getServers());
+    this.refreshSubscription = timer(0,300000).subscribe(() => this.getServers());
   }
 
   checkDetail(serverId, serverName, resourceType = RESOURCE_MEM) {
