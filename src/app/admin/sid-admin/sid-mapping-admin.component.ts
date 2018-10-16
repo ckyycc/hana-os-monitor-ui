@@ -52,7 +52,6 @@ export class SidMappingAdminComponent extends AdminTemplate4Table {
   lastSelectedRow: any;
   onRowSelect(event): void {
     // simulate double click, base on: https://github.com/akveo/ng2-smart-table/issues/513
-    // console.log(event);
     if (!this.lastSelectedRow) {
       this.lastSelectedRow = event.data;
     }
@@ -216,7 +215,6 @@ export class SidMappingAdminComponent extends AdminTemplate4Table {
       //check successfully
       return true;
     } else {
-      //return the index (need to use ==== for the return checking)
       return index;
     }
   }
@@ -291,9 +289,7 @@ export class SidMappingAdminComponent extends AdminTemplate4Table {
       //type 0: C01~C88 or type 1: CK1 ~ CK9
       return !(sidStartPart1 !== sidEndPart1 || sidStartPart2 > sidEndPart2);
     }
-    // if ((sidStartType === 0 && sidEndType === 2) || (sidStartType === 1 && sidEndType === 2)) {
-    //     //C31 ~ C3Z or CK1 ~ CKZ
-    // }
+
     if (sidStartType === 2 && sidEndType === 2) {
       //CKA ~ CKZ or C0A ~ C0Y
       //type 0: C01~C88 or type 1: CK1 ~ CK9

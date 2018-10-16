@@ -12,9 +12,7 @@ div.help-title {
 }
 
 div.help-body {
-  /*margin-right: 40px;*/
   line-height: 20px;
-  /*font-size: 14px;*/
   color: #575757 ;
   width: 700px;
 }

@@ -38,10 +38,6 @@ export class SIDAdminService {
 
   updateSIDMapping (sidMapping: SIDMapping): Observable<any> {
     return this.http.put(this.sidMappingUrl, sidMapping);
-    //   .pipe(
-    //   tap(_ => console.log(`updated sid sid =${sidMapping.sidStart} - ${sidMapping.sidEnd}`)),
-    //   // catchError(this.handleError<any>('updateSIDMapping'))
-    // );
   }
 
   addSIDMapping (sidMapping: SIDMapping): Observable<SIDMapping> {
@@ -50,17 +46,12 @@ export class SIDAdminService {
 
   /** DELETE: delete the employee location info from the server */
   deleteSIDMapping (sidMapping: SIDMapping): Observable<SIDMapping> {
-    //TODO: switch back to userid + locationId later
-    // const id = typeof sidMapping === 'number' ? sidMapping : sidMapping.id;
     const sidStart = sidMapping.sidStart;
     const sidEnd = sidMapping.sidEnd;
     const userId = sidMapping.employeeId;
     const url = `${this.sidMappingUrl}/${userId},${sidStart},${sidEnd}`;
 
     return this.http.delete<SIDMapping>(url);
-    //   .pipe(tap(_ => console.log(`deleted sid with sid=${id}`)),
-    //   // catchError(this.handleError<SIDMapping>('deleteSIDMapping'))
-    // );
   }
 
   generateSIDByMapping():Observable<any> {

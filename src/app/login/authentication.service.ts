@@ -14,9 +14,7 @@ export class AuthenticationService {
   public user: Employee;
 
   logon(): Observable<Employee> {
-    // const headers = new HttpHeaders().set('Access-Control-Allow-Origin', 'http://localhost:4200');
     return this.http.get<Employee>(this.userUrl).pipe(
-      // delay(5000),
       tap(data => {
         if (Util.checkUserValidity(data)) {
           Util.setCurrentUser(data);

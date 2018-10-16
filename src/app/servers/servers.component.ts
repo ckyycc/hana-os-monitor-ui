@@ -20,9 +20,7 @@ export class ServersComponent implements OnInit, OnDestroy  {
   servers: Server[];
   locations: Location[];
   resourceTypeText = {};
-  //color ='primary'//'accent'//'warn'//'primary';
-  mode = 'determinate'; //'determinate'//'buffer';
-  // value = 85;
+  mode = 'determinate';
   bufferValue = 90;
   columnNum: number;
 
@@ -40,7 +38,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
               private serverService: ServerService,
               private snackBar: MatSnackBar,
               public serverDetailDialog: MatDialog ) {
-    // Util.configTranslate(translate);
     this.resourceTypeText[RESOURCE_MEM] = 'SERVER.RESOURCE_MEM';
     this.resourceTypeText[RESOURCE_DISK] = 'SERVER.RESOURCE_DISK';
     this.resourceTypeText[RESOURCE_CPU] = 'SERVER.RESOURCE_CPU';
@@ -56,7 +53,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
     }
   }
   getColor(status): string {
-    // let thresholdValues = THRESHOLD[type].split("-");
     if (status === this.SERVER_STATUS.PRIMARY) {
       return this.STATUS_PRIMARY;
     } else if (status === this.SERVER_STATUS.ACCENT) {
@@ -75,23 +71,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
     }
   }
 
-
-
-  // getResourceTypeText(resource): string {
-  //   let resourceTypeText = null;
-  //    switch (resource.type)  {
-  //      case RESOURCE_MEM:
-  //        resourceTypeText = 'SERVER.RESOURCE_MEM';
-  //        break;
-  //      case RESOURCE_DISK:
-  //        resourceTypeText = 'SERVER.RESOURCE_DISK';
-  //        break;
-  //      case RESOURCE_CPU:
-  //        resourceTypeText = 'SERVER.RESOURCE_CPU';
-  //    }
-  //    return resourceTypeText;
-  // }
-
   getTooltip(server): string {
     return  `${server.resources[0].type}:${isNaN(server.resources[0].value)? -1: server.resources[0].value}% 
              ${server.resources[1].type}:${isNaN(server.resources[1].value)? -1: server.resources[1].value}% 
@@ -107,9 +86,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
     this.getColumnNum(event.target.innerWidth);
   }
 
-  // updateServers(): void {
-  //   this.getServers();
-  // }
   refreshData(): void {
     if (this.refreshSubscription != null) {
       this.refreshSubscription.unsubscribe();
@@ -118,7 +94,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
   }
 
   checkDetail(serverId, serverName, resourceType = RESOURCE_MEM) {
-    // this.router.navigate(['/server', { id: serverId, resource: resourceType}]);//`/server/${serverId}`]); //, { id: serverId, resource: resourceType}]);
     this.serverDetailDialog.open(ServerDetailComponent, {
       data: {serverId: serverId, serverName: serverName, resource: resourceType},
       width: '60%',
@@ -200,14 +175,6 @@ export class ServersComponent implements OnInit, OnDestroy  {
         self.findIndex(t => t.location.locationId == server.location.locationId) === index
       ).map(server => server.location);
 
-      // this.locations = [];
-      // for (let i = 0; i < this.servers.length; i++) {
-      //   if (this.locations.findIndex((location) => location.locationId === this.servers[i].location.locationId) < 0 &&
-      //     this.getCurrentUser().locIDs.includes(this.servers[i].location.locationId)) {
-      //     //only display the locations in users location list
-      //     this.locations.push(this.servers[i].location)
-      //   }
-      // }
       if (this.locations.length == 1) {
         this.selectedLocationId = this.locations[0].locationId;
       }

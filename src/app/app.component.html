@@ -1,11 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar role="heading">
     <span><img src = "./assets/logo.png" alt="SAP HANA OS Monitor" class="sap-logo"></span>
     <span class="header-title"><B>{{title | translate}}</B></span>
     <span class="header-spacer"></span>
-    <!--comment to fix popover doesn't work issue <span class="header-logon"-->
-          <!--[mdePopoverTriggerFor]="appPopover"-->
-          <!--[mdePopoverTriggerOn]="'click'">{{getUserName() || ('ROOT.LOGGING_IN' | translate)}}</span>-->
     <span class="header-logon" *ngIf="!getUser()">{{'ROOT.LOGGING_IN' | translate}}</span>
     <span class="header-logon" *ngIf="getUser()"
           [mdePopoverTriggerFor]="appPopoverUser"
@@ -40,19 +36,11 @@
       </mat-card>
     </mde-popover>
   </span>
-      <!--<span class="language-selector"> {{selectedLanguage}}</span>-->
-      <!--<mat-form-field class="language-selector"> -->
-      <!--<mat-select placeholder="" [(value)]="selectedLanguage" (selectionChange)="changeLanguage()">-->
-        <!--<mat-option *ngFor="let lang of translate.getLangs()" [value]="lang"> {{ getLangText(lang) }}-->
-        <!--</mat-option>-->
-      <!--</mat-select>-->
-    <!--</mat-form-field>-->
-    <!--</span>-->
+
 </mat-toolbar>
 <mat-divider></mat-divider>
 <nav mat-tab-nav-bar>
   <a mat-tab-link *ngFor="let link of links" [routerLink]="link.name"  [active]="activeLink == link.name">{{link.display | translate}}</a>
-     <!--(click)="activeLink = link.name">{{link.display}}</a>-->
 </nav>
 <router-outlet></router-outlet>
 

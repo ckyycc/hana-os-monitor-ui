@@ -18,7 +18,6 @@ export abstract class AdminTemplate4Table implements OnInit, OnDestroy {
     this._dialog = matDialog;
     this.translate = translate;
     this._dialogRef.disableClose = true;
-    // Util.configTranslate(this.translate);
   }
   public readonly translate: TranslateService;
   public tableSettings: any = {};
@@ -47,7 +46,6 @@ export abstract class AdminTemplate4Table implements OnInit, OnDestroy {
 
   protected loadDataAndSettings(data) {
     this.tableSource = new LocalDataSource(data);
-    // this.data = data;
     this.loadSettings();
   }
 
@@ -140,27 +138,6 @@ export abstract class AdminTemplate4Table implements OnInit, OnDestroy {
     this._showIndicator = false;
     this.setMessage(type, messageKey, messageParameter, error);
   }
-  // protected getMessageStatus(): number {
-  //   let status = this.message.status? this.message.status: STATUS.PRIMARY;
-  //   return status;
-  // }
-  // protected getMessageClass(): string {
-  //   let classStr;
-  //   switch (this.message.status) {
-  //     case STATUS.PRIMARY:
-  //       classStr = 'message-info';
-  //       break;
-  //     case STATUS.ACCENT:
-  //       classStr = 'message-warning';
-  //       break;
-  //     case STATUS.WARN:
-  //       classStr = 'message-error';
-  //       break;
-  //     default:
-  //       classStr = 'message-info';
-  //   }
-  //   return classStr;
-  // }
 
   private static _compareValues(a1, a2) : number {
     return a1.value == a2.value? 0: a1.value > a2.value ? 1: -1;

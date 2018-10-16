@@ -29,9 +29,7 @@ export class InMemoryServerService implements InMemoryDbService {
   createDb() {
     let servers = [];
     for (let i = 0; i < this.SERVER_LIST.length; i++) {
-      // let cpu_resource = {type: 'CPU', value: Math.floor((Math.random() * 70) + 30)};
-      // let mem_resource = {type: 'MEM', value: Math.floor((Math.random() * 70) + 30)};
-      // let disk_resource = {type: 'DISK', value: Math.floor((Math.random() * 70) + 30)};
+
       let consumersCPU = [];
       let consumersMEM = [];
       let consumersDISK = [];

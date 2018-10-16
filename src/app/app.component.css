@@ -1,31 +1,6 @@
-
-/*!* Navigation link styles *!*/
-/*nav a {*/
-  /*padding: 5px 10px;*/
-  /*text-decoration: none;*/
-  /*margin-right: 10px;*/
-  /*margin-top: 10px;*/
-  /*display: inline-block;*/
-  /*background-color: #eee;*/
-  /*border-radius: 4px;*/
-  /*font-size: 12pt;*/
-/*}*/
-/*nav a:visited, a:link {*/
-  /*color: #607D8B;*/
-/*}*/
-/*nav a:hover {*/
-  /*color: #039be5;*/
-  /*background-color: #CFD8DC;*/
-/*}*/
-/*nav a.active {*/
-  /*color: #039be5;*/
-/*}*/
 img.sap-logo{
   width:72px ;
   margin-top: 8px;
-  /*margin-bottom: 2px;*/
-
-  /*height:128px;*/
 }
 
 
@@ -36,24 +11,6 @@ img.sap-logo{
 
 }
 
-/*.header-search {*/
-  /*flex: 1 1 auto;*/
-  /*text-align: center;*/
-/*}*/
-
-/*.mat-form-field-search {*/
-  /*background-color:whitesmoke;!*whitesmoke;*!*/
-  /*font-size: 14px;*/
-  /*color: #b6b6b6;*/
-  /*width: 350px;*/
-  /*height: 35px;*/
-  /*padding-bottom: 5px;*/
-  /*padding-left: 10px;*/
-  /*padding-right: 5px;*/
-  /*!*border: 1px solid lightskyblue;*!*/
-/*}*/
-
-
 .header-logon {
   padding: 0 14px;
   font-size: 12px;
@@ -63,7 +20,6 @@ img.sap-logo{
 .header-logon:hover {
   color: darkblue;
   text-decoration: underline;
-  /*font-weight: bold;*/
   cursor: pointer;
 }
 
@@ -74,9 +30,6 @@ img.sap-logo{
 .header-lang-selector {
   font-size: 12px;
   float: right;
-  /*color: #575757;*/
-  /*margin-top: 5px;*/
-  /*margin-right: -15px;*/
 }
 .header-lang-selector:hover  {
   color: darkblue;
@@ -88,46 +41,24 @@ img.sap-logo{
 
 }
 .lang-selector-item:hover{
-/*background-color: powderblue;*/
   cursor: pointer;
   color: darkblue;
   font-weight: bold;
 }
-/*.header-lang-selector:hover {*/
-  /*color: blue;*/
-/*}*/
-
-/*.language-selector  {*/
-  /*width:70px;*/
-  /*color: #575757;*/
-  /*font-size: 12px;*/
-
-/*}*/
-
-/*.language-selector:hover  {*/
-  /*color: red;*/
-  /*font-weight: bold;*/
-/*}*/
 
 /deep/.mat-form-field-underline{
   display: none;
 }
 /*********************above is for language selector******************/
 .mat-toolbar {
-  background-color: white; /*#f0faf5;*/
+  background-color: white;
   height: 52px;
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  /*z-index:1000;*/
   position: sticky;
   position: -webkit-sticky; /* For macOS/iOS Safari */
   top: 0; /* Sets the sticky toolbar to be on top */
   z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
-a.mat-tab-link {
-  /*border: 1px solid grey;*/
-}
+
 a.mat-tab-link:hover {
   background-color: #f5f5f5;
   font-weight: bold;

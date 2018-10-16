@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(protected translate: TranslateService,
               private route: ActivatedRoute,
               private router: Router,
-              private authenticationService: AuthenticationService) {
-    // Util.configTranslate(translate);
-  }
+              private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';

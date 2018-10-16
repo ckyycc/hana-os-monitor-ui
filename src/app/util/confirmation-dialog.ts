@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 import { TranslateService } from "@ngx-translate/core";
-import { Util } from "./util";
 
 
 @Component({
@@ -18,7 +17,6 @@ import { Util } from "./util";
 export class ConfirmationDialog {
   constructor( public translate: TranslateService, public dialogRef: MatDialogRef<ConfirmationDialog>) {
     dialogRef.disableClose = true;
-    // Util.configTranslate(translate);
   }
 
   public confirmMessage:string;

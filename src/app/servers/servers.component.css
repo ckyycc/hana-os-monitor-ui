@@ -6,7 +6,7 @@ div.monitor-search {
 }
 
 .mat-form-field-search {
-  background-color: #fafafa;/*whitesmoke;*/
+  background-color: #fafafa;
   font-size: 12px;
   color: #b6b6b6;
   width: 230px;
@@ -14,7 +14,6 @@ div.monitor-search {
   padding-bottom: -10px;
   padding-left: 10px;
   padding-right: 5px;
-  /*border: 1px solid lightskyblue;*/
 }
 /**********below for search ********/
 /**********below for location selector**********/
@@ -28,7 +27,6 @@ div.monitor-search {
   display: none;
 }
 div.monitor-selector {
-  /*top: -55px;*/
   margin-right: 25px;
   margin-top: -45px;
   margin-bottom: 40px;
@@ -45,10 +43,8 @@ mat-grid-tile { border: 0px solid lightgrey; }
 mat-grid-tile:hover { border: 1px solid lightskyblue;  cursor: pointer; }
 div.monitor-content {
   width: 98%;
-  /*border: 1px solid grey;*/
   margin-left: 10px;
   margin-top: 20px;
-  /*text-align: center;*/
 }
 label.monitor-card-title {
   display: inline-block;
@@ -62,40 +58,30 @@ label.monitor-card-resource-type {
   margin: .3em 0;
   color: #607D8B;
   white-space:nowrap;
-  /*font-weight: bold;*/
 }
 label.monitor-card-resource-type:hover { cursor: pointer; }
 /*********below for server info card*********/
 mat-card {
   width: 155px;
   height: 145px;
-  /*border: 1px solid lightgrey;*/
-
-  /*margin: 30px;*/
 }
 
-.monitor-section {
-  /*display: block;*/
-  /*align-content: center;*/
-  /*align-items: center;*/
-}
 .monitor-section:hover{
-  /*border: 1px solid mediumvioletred;*/
   font-weight: bold;
   font-size: 110%;
   cursor: pointer;
 }
 
 .primary {
-  background-color: mintcream /*#ceffd4;*/
+  background-color: mintcream
 }
 
 .accent {
-  background-color: #fbffe3;/*#feffd9;*/
+  background-color: #fbffe3;
 }
 
 .warn {
-  background-color: #ffe5f1; /*#ffe3db;*/
+  background-color: #ffe5f1;
   -webkit-animation: warning 1.5s infinite;
   -moz-animation:    warning 1.5s infinite;
   animation:         warning 1.5s infinite;
@@ -129,36 +115,27 @@ mat-card {
 /*********above for server info card*********/
 /**********above for servers content**********/
 
-/deep/.mat-tooltip.tooltip {
+::ng-deep .mat-tooltip.tooltip {
   background-color: darkolivegreen;
   font-size: 12px;
 }
 
 
 /*primary*/
-/deep/ .mat-progress-bar-fill::after {
+::ng-deep .mat-progress-bar-fill::after {
   background-color: cornflowerblue;
 }
-/*/deep/  .mat-progress-bar-buffer {*/
-  /*background-color: lightblue;*/
-/*}*/
 
 /*accent*/
-/deep/ .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+::ng-deep .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
   background-color: #fff286;
 }
-/*/deep/ .mat-progress-bar.mat-accent .mat-progress-bar-fill::after {*/
-  /*background-color: yellow;*/
-/*}*/
-
 
 /*warn*/
-/deep/ .mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+::ng-deep .mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
   background-color: lightsalmon;
 }
-/*/deep/ .mat-progress-bar.mat-warn .mat-progress-bar-buffer {*/
-  /*background-color: lightcoral;*/
-/*}*/
-/deep/ .warning-snackbar {
+
+::ng-deep .warning-snackbar {
   color: yellow;
 }

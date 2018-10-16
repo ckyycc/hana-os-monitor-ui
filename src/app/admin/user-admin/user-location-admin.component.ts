@@ -5,7 +5,6 @@ import { AdminTemplate4Table } from "../table-template";
 import { EmployeeLocation, STATUS } from "../../util/consts-classes";
 import { MatSnackBar } from "@angular/material";
 import { TranslateService } from "@ngx-translate/core";
-import {Util} from "../../util/util";
 
 @Component({
   selector: 'app-user-location-admin',

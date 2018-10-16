@@ -6,7 +6,6 @@ import { SidAdminComponent } from "./sid-admin/sid-admin.component";
 import { SidMappingAdminComponent } from "./sid-admin/sid-mapping-admin.component";
 import { ConfigAdminComponent } from "./config-admin/config-admin.component";
 import { TranslateService } from "@ngx-translate/core";
-import { Util } from "../util/util";
 
 @Component({
   selector: 'app-admin',
@@ -17,9 +16,7 @@ export class AdminComponent implements OnInit {
 
   dialogConfig = { width: '80%' };
   adminItems = [];
-  constructor(public translate: TranslateService, public dialog: MatDialog) {
-    // Util.configTranslate(translate);
-  }
+  constructor(public translate: TranslateService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.getAdminItems();

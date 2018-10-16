@@ -26,10 +26,6 @@ export class UserAdminService {
     const url = `${this.employeesUrl}/${id}`;
 
     return this.http.delete<Employee>(url);
-    //   .pipe(
-    //   tap(_ => console.log(`deleted location with hero id=${id}`)),
-    //   catchError(this.handleError<Employee>('deleteEmployee'))
-    // );
   }
 
   /** PUT: update the employee location info on the server */
