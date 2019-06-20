@@ -1,4 +1,4 @@
-# Frontend of HANA Server Operating System Monitoring Tool
+# HANA Server Operating System Monitoring Tool (Frontend)
 
 ## Functionalities:
 * Shows the over all status of all servers
