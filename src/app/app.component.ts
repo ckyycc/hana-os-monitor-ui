@@ -15,9 +15,8 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'ROOT.TITLE';
   links = [{name:"/"+URL_SERVERS, display:'ROOT.TAB_HOME'},
            {name:"/"+URL_ADMIN, display:'ROOT.TAB_ADMIN'},
-           {name:"/"+URL_HELP, display:'ROOT.TAB_HELP'},
-           {name:"/"+URL_NO_AUTH, display:'ROOT.TAB_TEST'}];
-  activeLink: string;//this.links[0].name;
+           {name:"/"+URL_HELP, display:'ROOT.TAB_HELP'}];
+  activeLink: string;
   user: Employee;
   selectedLanguage: string = null;
   constructor(private  router: Router, public translate: TranslateService) {
