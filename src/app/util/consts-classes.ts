@@ -10,6 +10,7 @@ export const STATUS = {
 };
 
 export const URL_SERVERS = 'servers';
+export const URL_INFO = "info";
 export const URL_ADMIN = 'admin';
 export const URL_NO_AUTH = 'no-auth';
 export const URL_LOGIN = 'login';
@@ -49,6 +50,22 @@ export class Server {
   name: string;
   status: number;
   resources: Resource[];
+}
+
+export class Instance {
+  serverName: String;
+  sid: String;
+  employeeName: String;
+  revision: String;
+  releaseSP: String;
+  memUsageGB: number;
+  memUsageRank: number;
+  diskUsageGB: number;
+  diskUsageRank: number;
+  cpuUsagePCT: number;
+  cpuUsageRank: number;
+  os: String;
+  checkTime: String;
 }
 
 export class History {

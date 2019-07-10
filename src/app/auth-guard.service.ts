@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
-import { URL_ADMIN, URL_SERVERS } from "./util/consts-classes";
+import {URL_ADMIN, URL_INFO, URL_SERVERS} from "./util/consts-classes";
 import { Util } from "./util/util";
 
 @Injectable({
@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate{
       return false;
     } else {
       let user = Util.getCurrentUser();
-      if ((state.url == `/${URL_SERVERS}` && Util.checkAuth(user)) ||
+      if (((state.url == `/${URL_SERVERS}` || state.url == `/${URL_INFO}`) && Util.checkAuth(user)) ||
           (state.url == `/${URL_ADMIN}` && Util.checkAuthAdmin(user))
       ) {
         return true;

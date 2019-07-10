@@ -47,6 +47,7 @@ import { SidMappingAdminComponent } from "./admin/sid-admin/sid-mapping-admin.co
 import { ConfigAdminComponent } from "./admin/config-admin/config-admin.component"
 import { ConfirmationDialog } from "./util/confirmation-dialog";
 import { HttpClientInterceptor } from "./http-client.interceptor";
+import { InstancesComponent } from "./instances/instances.component";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { HttpClientInterceptor } from "./http-client.interceptor";
     HelpDialog,
     NoAuthorizationComponent,
     ServersComponent,
+    InstancesComponent,
     ServerDetailComponent,
     LoginComponent,
     HelpComponent,

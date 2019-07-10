@@ -1,0 +1,65 @@
+.instance-table {
+  margin: 15px 15px 15px 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/********** below settings are for table *********/
+/* grid lines */
+:host ::ng-deep ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid #e9ebec;
+  color: #575757;
+}
+
+:host ::ng-deep ng2-smart-table table > tbody > tr:nth-child(even) {
+  background: #fcfcfc ;
+}
+
+:host ::ng-deep ng2-smart-table table > tbody > tr:hover {
+  background: #effeff ;
+}
+
+:host ::ng-deep ng2-smart-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* headers grid color*/
+:host ::ng-deep ng2-smart-table thead > tr > th  {
+  border: 1px solid #e9ebec;
+  background-color: #fafafa ;
+  position: sticky;
+  top: 0;
+}
+
+/* headers grid color*/
+:host ::ng-deep ng2-smart-table thead > tr > th .ng2-smart-sort-link {
+  color: #575757;
+}
+
+
+/* headers filter*/
+:host ::ng-deep .ng2-smart-filter input {
+  border: 1px dotted #e9ebec;
+  border-radius: 4px;
+}
+
+/*font size*/
+:host ::ng-deep ng2-smart-table {
+  font-size:14px;
+}
+
+/********** above settings are for table in children pages *********/
+
+::ng-deep .warning-snackbar {
+  color: yellow;
+  font-weight: bold;
+}
+::ng-deep .error-snackbar {
+  color: #ff5f5b;
+  font-weight: bold;
+}
+::ng-deep .info-snackbar {
+  color: cornflowerblue;
+  font-weight: bold;
+}

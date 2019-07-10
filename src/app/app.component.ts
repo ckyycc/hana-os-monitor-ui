@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {URL_SERVERS, URL_ADMIN, URL_NO_AUTH, URL_HELP, Employee, SUPPORT_LANGUAGE} from "./util/consts-classes";
+import {URL_SERVERS, URL_ADMIN, URL_HELP, Employee, SUPPORT_LANGUAGE, URL_INFO} from "./util/consts-classes";
 import { Util } from "./util/util";
 import { NavigationEnd, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
@@ -14,9 +14,10 @@ import {delay} from "rxjs/operators";
 export class AppComponent implements OnInit, OnDestroy{
   title = 'ROOT.TITLE';
   links = [{name:"/"+URL_SERVERS, display:'ROOT.TAB_HOME'},
+           {name:"/"+URL_INFO, display:'ROOT.TAB_INFO'},
            {name:"/"+URL_ADMIN, display:'ROOT.TAB_ADMIN'},
            {name:"/"+URL_HELP, display:'ROOT.TAB_HELP'}];
-  activeLink: string;
+  activeLink: string;//this.links[0].name;
   user: Employee;
   selectedLanguage: string = null;
   constructor(private  router: Router, public translate: TranslateService) {

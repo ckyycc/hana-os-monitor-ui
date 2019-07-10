@@ -23,7 +23,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
     //   //in production, angular integrated to expressjs, do not need clone request.
     //   if (!request.url.includes("/assets/i18n")) {
     //     secureReq = request.clone({
-    //       url: `https://VANN00592391A.amer.global.corp.sap:4433/${request.url}`, //.replace('http://', 'https://'),
+    //       url: `https://VANN34294392A.amer.global.corp.sap:4433/${request.url}`.replace('http://', 'https://'),
     //       // url: `https://llbpal91.pal.sap.corp:4433/${request.url}`, //.replace('http://', 'https://'),
     //       headers: request.headers.set('Content-Type', 'application/json')
     //     });
@@ -33,9 +33,9 @@ export class HttpClientInterceptor implements HttpInterceptor {
     // } else {
     //   secureReq = request;
     // }
-    // let secureReq = request.clone({
-    //   headers: request.headers.set('Content-Type', 'application/json')
-    // });
+    // // let secureReq = request.clone({
+    // //   headers: request.headers.set('Content-Type', 'application/json')
+    // // });
 
     // handle error
     return next.handle(request).catch((err: HttpErrorResponse) => {
