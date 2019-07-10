@@ -7,7 +7,10 @@ This frontend part of the monitoring tool implements the following functions:
 * Administration and configuration
 
 
-## Some Demos
+## Demos
+
+Check out below demos: [servers](#servers), [resource consumption information](#resource-consumption-information), [resource consumption history](#resource-consumption-history), [resource consumption information](#resource-consumption-information), [information (overview)](#information-overview), [administration home UI](#administration-home-ui), [admin UI - SID mapping](#admin-ui---sid-mapping) and the [admin UI - parameters configuration](#admin-ui---parameters-configuration) for more information:
+
 
 ### Servers
 ![servers](https://raw.githubusercontent.com/ckyycc/hana-os-monitor-ui/master/demo/servers.png)
