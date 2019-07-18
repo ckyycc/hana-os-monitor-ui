@@ -33,6 +33,7 @@ export class InstancesComponent implements OnInit, OnDestroy{
           sid.memUsageGB = sid.memUsageGB ? Number(sid.memUsageGB) : null;
           sid.diskUsageGB = sid.diskUsageGB ? Number(sid.diskUsageGB) : null;
           sid.cpuUsagePCT = sid.cpuUsagePCT ? Number(sid.cpuUsagePCT) : null;
+          // sid.sid = sid.instanceNum != null ? `${sid.sid} (${sid.instanceNum})` : `${sid.sid} (N/A)`
           // sid.os = sid.os
           //   .replace("SUSE Linux Enterprise Server", "SLES")
           //   .replace("Red Hat Enterprise Linux", "RHEL");
@@ -66,9 +67,11 @@ export class InstancesComponent implements OnInit, OnDestroy{
         perPage: 1000
       },
       columns: {
-        serverName: { title: this.getTranslatedText("ADMIN.TABLE_SERVER_NAME"), editable: false },
-        sid: { title: this.getTranslatedText("ADMIN.TABLE_SID"), editable: false },
-        employeeName: { title: this.getTranslatedText("ADMIN.TABLE_EMPLOYEE_NAME"), editable: false },
+        //TODO: localization
+        serverName: { title: "Server Name", editable: false },
+        sid: { title: "SID", editable: false },
+        instanceNum: { title: "Instance Num", editable: false },
+        employeeName: { title: "Name", editable: false },
         revision: { title: "Revision", editable: false },
         releaseSP: { title: "Release", editable: false },
         memUsageGB: { title: "MEM Usage(GB)", editable: false },

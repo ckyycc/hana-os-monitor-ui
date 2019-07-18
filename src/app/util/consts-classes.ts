@@ -55,6 +55,7 @@ export class Server {
 export class Instance {
   serverName: String;
   sid: String;
+  instanceNum: String;
   employeeName: String;
   revision: String;
   releaseSP: String;
