@@ -37,6 +37,18 @@ export class InstancesComponent implements OnInit, OnDestroy{
           // sid.os = sid.os
           //   .replace("SUSE Linux Enterprise Server", "SLES")
           //   .replace("Red Hat Enterprise Linux", "RHEL");
+
+          //remove domain name from full names (it's too long)
+          if (sid.host.indexOf(".") >= 0) {
+            let i = sid.host.indexOf("."), host = sid.host.slice(0, i);
+            while (i < sid.host.length) {
+              //domain name starts, skip all other domain names until reaches the end (the space)
+              if (sid.host[i] == ".") { while (sid.host[i] != " " && sid.host[i] != "(") { i++; } }
+              //update host
+              host += sid.host[i++];
+            }
+            sid.host = host;
+          }
           sid.checkTime = sid.checkTime.slice(0, 19);
         });
         this.loadDataAndSettings(sids);
@@ -71,9 +83,10 @@ export class InstancesComponent implements OnInit, OnDestroy{
         serverName: { title: "Server Name", editable: false },
         sid: { title: "SID", editable: false },
         instanceNum: { title: "Instance Num", editable: false },
+        host: {title:"Host", editable: false},
         employeeName: { title: "Name", editable: false },
         revision: { title: "Revision", editable: false },
-        releaseSP: { title: "Release", editable: false },
+        edition: { title: "Edition", editable: false },
         memUsageGB: { title: "MEM Usage(GB)", editable: false },
         memUsageRank: { title: "MEM Rank", editable: false },
         diskUsageGB: { title: "Disk Usage(GB)", editable: false },
