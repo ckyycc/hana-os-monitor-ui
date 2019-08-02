@@ -49,7 +49,8 @@ export class InstancesComponent implements OnInit, OnDestroy{
             }
             sid.host = host;
           }
-          sid.checkTime = sid.checkTime.slice(0, 19);
+          sid.checkTime = sid.checkTime.slice(0, 13);
+          sid.edition = sid.edition.replace("SAP HANA ", "");
         });
         this.loadDataAndSettings(sids);
         this.onResize();
@@ -80,21 +81,37 @@ export class InstancesComponent implements OnInit, OnDestroy{
       },
       columns: {
         //TODO: localization
-        serverName: { title: "Server Name", editable: false },
+        // serverName: { title: "Server", editable: false, width: "125px" },
+        // sid: { title: "SID", editable: false, width: "75px" },
+        // instanceNum: { title: "Inst. Num", editable: false, width: "100px" },
+        // revision: { title: "Revision", editable: false,  width: "165px" },
+        // edition: { title: "Edition", editable: false, width: "85px" },
+        // employeeName: { title: "Name", editable: false, width: "165px" },
+        // memUsageGB: { title: "MEM (GB)", editable: false, width: "100px" },
+        // memUsageRank: { title: "MEM Rank", editable: false, width: "105px" },
+        // diskUsageGB: { title: "Disk (GB)", editable: false, width: "100px" },
+        // diskUsageRank: { title: "Disk Rank", editable: false, width: "105px" },
+        // cpuUsagePCT: { title: "CPU (%)", editable: false, width: "100px" },
+        // host: {title:"Host", editable: false},
+        // // cpuUsageRank: { title: "CPU Usage Rank", editable: false },
+        // // os: { title: "OS", editable: false },
+        // checkTime: { title: "Update Time", editable: false, width: "160px" }
+
+        serverName: { title: "Server", editable: false },
         sid: { title: "SID", editable: false },
-        instanceNum: { title: "Instance Num", editable: false },
-        host: {title:"Host", editable: false},
-        employeeName: { title: "Name", editable: false },
+        instanceNum: { title: "Inst. Num", editable: false },
         revision: { title: "Revision", editable: false },
+        host: { title:"Host", editable: false, width: "250px" },
         edition: { title: "Edition", editable: false },
-        memUsageGB: { title: "MEM Usage(GB)", editable: false },
+        employeeName: { title: "Name", editable: false, width: "168px" },
+        memUsageGB: { title: "MEM (GB)", editable: false },
         memUsageRank: { title: "MEM Rank", editable: false },
-        diskUsageGB: { title: "Disk Usage(GB)", editable: false },
+        diskUsageGB: { title: "Disk (GB)", editable: false },
         diskUsageRank: { title: "Disk Rank", editable: false },
-        cpuUsagePCT: { title: "CPU Usage(%)", editable: false },
+        cpuUsagePCT: { title: "CPU (%)", editable: false },
         // cpuUsageRank: { title: "CPU Usage Rank", editable: false },
         // os: { title: "OS", editable: false },
-        checkTime: { title: "Check Time", editable: false }
+        checkTime: { title: "Update", editable: false, width: "130px" }
       }
     };
     this.tableSource = new LocalDataSource(data);
