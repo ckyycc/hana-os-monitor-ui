@@ -53,9 +53,11 @@ export class Server {
 }
 
 export class Instance {
+  host: string;
+  edition: string;
+  instanceNum: string;
   serverName: String;
   sid: String;
-  instanceNum: String;
   employeeName: String;
   revision: String;
   releaseSP: String;
